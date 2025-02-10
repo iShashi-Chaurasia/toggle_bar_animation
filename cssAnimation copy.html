@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toggle Bar Animation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+        }
+
+        .menu-container {
+            position: relative;
+            width: 40px;
+            height: 40px;
+            cursor: pointer;
+        }
+
+        .bar {
+            width: 40px;
+            height: 5px;
+            background-color: #333;
+            margin: 6px 0;
+            transition: 0.4s;
+            border-radius: 5px;
+        }
+
+        .menu-container.active .bar:nth-child(1) {
+            transform: translateY(11px) rotate(45deg);
+        }
+
+        .menu-container.active .bar:nth-child(2) {
+            opacity: 0;
+        }
+
+        .menu-container.active .bar:nth-child(3) {
+            transform: translateY(-11px) rotate(-45deg);
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="menu-container" onclick="toggleMenu()">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+    </div>
+
+    <script>
+        function toggleMenu() {
+            document.querySelector('.menu-container').classList.toggle('active');
+        }
+    </script>
+
+</body>
+</html>
